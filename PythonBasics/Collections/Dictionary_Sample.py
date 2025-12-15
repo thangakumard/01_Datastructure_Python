@@ -9,6 +9,9 @@ def demo_dictionary_methods_and_operations():
     # 1. DICTIONARY METHODS
     # =============================
     print("\n1. Methods:")
+    # Insert new key-value pair
+    d["d"] = 4
+    print("\nAfter inserting d['d'] = 4:", d)
 
     # get()
     print("get('a'):", d.get("a"))
