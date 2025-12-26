@@ -1,6 +1,22 @@
+print("************** Start - Possible ways to initialize dictionary ****************")
+#Initialize empty dictionary
+d = {}
+# or
+d = dict()
+
+#Initialize dictionary with values
 d = {"name": "John", "age": 30, "city": "New York"}
-print("****************")
+#or
+d = dict(name="John", age=30, city="New York")
 print(d)
+
+#Initialize dictionary from list/tuple of pairs
+d = dict([("name", "John"), ("age", 30)])
+
+#Initialize dictionary from fromkeys()
+temp = dict.fromkeys(["a", "b", "c"], 0)
+print("************** End - Possible ways to initialize dictionary ****************")
+
 
 d = {"name": "John", "age": 35}
 print("After reassigning values:", d)
