@@ -1,13 +1,11 @@
-print("************** Start - Possible ways to initialize dictionary ****************")
-#Initialize empty dictionary
+print("****************")
+print("1. Empty dictionary creation:")
 d = {}
-# or
 d = dict()
 
-#Initialize dictionary with values
+print("2. Dictionary with initial values:")
 d = {"name": "John", "age": 30, "city": "New York"}
-#or
-d = dict(name="John", age=30, city="New York")
+print("****************")
 print(d)
 
 #Initialize dictionary from list/tuple of pairs
