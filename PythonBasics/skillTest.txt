@@ -3,6 +3,18 @@
 ### Conceptual
 
 1. Difference between `int` and `float`?
+| Feature    | `int`            | `float`                      |
+| ---------- | ---------------- | ---------------------------- |
+| Stores     | Whole numbers    | Decimal numbers              |
+| Example    | `10`, `-5`       | `10.5`, `-3.14`              |
+| Precision  | Exact            | Approximate (floating point) |
+| Memory     | Less             | More                         |
+| Operations | Faster           | Slightly slower              |
+| Conversion | `int(5.9)` → `5` | `float(5)` → `5.0`           |
+
+Key point:
+    int has no decimal part, float always has decimal precision.
+
 2. What is implicit vs explicit type conversion?
 3. How does Python handle integer overflow?
 4. What is truthy and falsy in Python?
