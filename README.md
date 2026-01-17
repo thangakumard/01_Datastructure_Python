@@ -17,9 +17,32 @@ Key point:
     int has no decimal part, float always has decimal precision.
 
 2. What is implicit vs explicit type conversion?
-3. How does Python handle integer overflow?
-4. What is truthy and falsy in Python?
-5. Difference between `==` and `is`?
+
+   🔹 Implicit (Automatic)
+
+    Python automatically converts one type to another.
+    a = 10      # int
+    b = 2.5     # float
+    c = a + b   # Python converts int → float
+    print(c)    # 12.5
+   
+   ✔ Done by Python
+   ✔ No data loss usually
+
+   🔹 Explicit (Manual)
+
+    The programmer converts type manually.
+
+    x = "100"
+    y = int(x)
+    print(y)   # 100
+    
+    ✔ Done by developer
+    ✔ Used when types mismatch
+
+4. How does Python handle integer overflow?
+5. What is truthy and falsy in Python?
+6. Difference between `==` and `is`?
 
 ### Practical
 
