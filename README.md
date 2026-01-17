@@ -41,8 +41,52 @@ Key point:
     ✔ Used when types mismatch
 
 4. How does Python handle integer overflow?
-5. What is truthy and falsy in Python?
-6. Difference between `==` and `is`?
+    Python DOES NOT overflow integers.
+    It supports arbitrary-precision integers.
+
+    x = 10**100
+    print(x)
+
+   ✔ No limit on size
+    ✔ Memory increases dynamically
+    ✔ Slower for extremely large numbers
+    Unlike C/Java:
+    No wrap-around or overflow error.
+
+6. What is truthy and falsy in Python?
+       🔹 Falsy values
+    
+    Evaluated as False in condition:
+    
+    False
+    0
+    0.0
+    ''
+    []
+    {}
+    ()
+    None
+    
+    
+    Example:
+    
+    if []:
+        print("True")
+    else:
+        print("False")   # Executes
+    
+    🔹 Truthy values
+    
+    Everything else is truthy:
+    
+    1
+    "hello"
+    [1,2]
+    {'a':1}
+   
+8. Difference between `==` and `is`?
+    ==	Compares values
+    is	Compares memory location (identity)
 
 ### Practical
 
