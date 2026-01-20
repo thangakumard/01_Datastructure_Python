@@ -122,3 +122,119 @@ def demo_list_methods_and_operations():
     
 if __name__ == "__main__":
     demo_list_methods_and_operations()
+
+
+    """
+    Here’s a **complete matrix of Python List methods** with their **time complexity** and **description** 👇
+(This is interview-grade and practical)
+
+---
+
+# 📌 Python List Methods – Time Complexity Matrix
+
+| Method  | Syntax                 | Time Complexity | Description             |
+| ------- | ---------------------- | --------------- | ----------------------- |
+| append  | `lst.append(x)`        | **O(1)**        | Add element at end      |
+| extend  | `lst.extend(iterable)` | **O(k)**        | Add k elements          |
+| insert  | `lst.insert(i, x)`     | **O(n)**        | Insert at index         |
+| pop     | `lst.pop()`            | **O(1)**        | Remove last             |
+| pop(i)  | `lst.pop(i)`           | **O(n)**        | Remove at index         |
+| remove  | `lst.remove(x)`        | **O(n)**        | Remove first occurrence |
+| clear   | `lst.clear()`          | **O(n)**        | Remove all              |
+| index   | `lst.index(x)`         | **O(n)**        | Find index              |
+| count   | `lst.count(x)`         | **O(n)**        | Count value             |
+| sort    | `lst.sort()`           | **O(n log n)**  | Sort in-place           |
+| reverse | `lst.reverse()`        | **O(n)**        | Reverse list            |
+| copy    | `lst.copy()`           | **O(n)**        | Shallow copy            |
+
+---
+
+# 📌 List Access Operations
+
+| Operation    | Syntax     | Time     |
+| ------------ | ---------- | -------- |
+| Index access | `lst[i]`   | **O(1)** |
+| Slice        | `lst[a:b]` | **O(k)** |
+| Membership   | `x in lst` | **O(n)** |
+| Length       | `len(lst)` | **O(1)** |
+
+---
+
+# 📌 Insert/Delete Complexity Summary
+
+| Position  | Cost     |
+| --------- | -------- |
+| End       | **O(1)** |
+| Beginning | **O(n)** |
+| Middle    | **O(n)** |
+
+---
+
+# 📌 Why insert/remove is O(n)?
+
+Because Python lists are:
+
+> **Dynamic arrays**
+
+Elements after insertion/deletion must be **shifted**.
+
+---
+
+# 📌 Example
+
+```python
+lst = [1,2,3,4]
+lst.insert(1, 99)   # shift [2,3,4]
+```
+
+---
+
+# 📌 Interview One-liner
+
+> Python list is a dynamic array.
+> Insertion/deletion in middle is O(n).
+> Append is O(1) amortized.
+
+---
+
+# 📌 Space Complexity
+
+| Operation | Space |
+| --------- | ----- |
+| append    | O(1)  |
+| copy      | O(n)  |
+| slicing   | O(k)  |
+
+---
+
+# 📌 Common Traps
+
+| Code           | Cost   |
+| -------------- | ------ |
+| `pop(0)`       | ❌ O(n) |
+| `insert(0, x)` | ❌ O(n) |
+| `lst += other` | O(k)   |
+
+---
+
+# 📌 When to use list?
+
+✔ Random access
+✔ Stack
+✔ Small datasets
+✔ Ordered storage
+
+---
+
+# 📌 Comparison
+
+| Structure | Best for     |
+| --------- | ------------ |
+| list      | index access |
+| deque     | queue        |
+| set       | lookup       |
+| dict      | key lookup   |
+
+---
+
+    """
