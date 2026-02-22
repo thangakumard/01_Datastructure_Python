@@ -23,6 +23,8 @@ Constraints:
 1 <= n <= 20
 1 <= k <= n
 '''
+#Time complexity O (k.C(n,k))
+#Space Complexity O(k)
 from typing import List
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
@@ -35,17 +37,18 @@ class Solution:
 
     def _backtracking(self, n: int, k: int, result: List[List[int]], temp: List[int], start: int) -> None:
         if len(temp) == k:
-            result.append(temp.copy())
+            result.append(temp.copy()) #O(k)
             return
 
-        remaining = k - len(temp)
-        # last start value that still allows filling 'remaining' numbers
-        end = n - remaining + 1
+        remainingLen = k - len(temp) # remainingLen = 2-1 = 1
+        # last start value that still allows filling 'remainingLen' numbers
+        end = n - remainingLen + 1 # 5 - 1 + 1 = 5
 
         for i in range(start, end + 1):
             temp.append(i)
             self._backtracking(n, k, result, temp, i + 1)
             temp.pop()
+
 if __name__ == "__main__":
     sol = Solution()
     print(sol.combine(5,2))
