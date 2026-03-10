@@ -1,0 +1,30 @@
+'''
+Time complexity O(n)
+Space complexity O(h) => height of the BT
+    O(n) worst case - Skewed tree
+    O(log n) for the balanced tree
+'''
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        """
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        """
+        if not root or root == p or root == q:
+            return root
+        
+        left = self.lowestCommonAncestor(root.left,p,q)
+        right = self.lowestCommonAncestor(root.right,p,q)
+
+        if left and right:
+            return root
+
+        return left or right
