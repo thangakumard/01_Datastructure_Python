@@ -28,26 +28,22 @@ Constraints:
 from typing import List
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
-        result: List[List[int]] = []
-        if n <= 0 or k <= 0 or k > n:
-            return result
-
-        self._backtracking(n, k, result, [], 1)
+        if not n:
+            return []
+        result = []
+        def backtracking(current, start):
+            if len(current) == k:
+                result.append(current[:])
+                return
+            remaining = k - len(current)# remainingLen = 2-1 = 1
+            # last start value that still allows filling 'remainingLen' numbers
+            end = n - remaining + 1 # 5 - 1 + 1 = 5
+            for i in range(start, end + 1):
+                current.append(i)
+                backtracking(current, i+1)
+                current.pop()
+        backtracking([],1)
         return result
-
-    def _backtracking(self, n: int, k: int, result: List[List[int]], temp: List[int], start: int) -> None:
-        if len(temp) == k:
-            result.append(temp.copy()) #O(k)
-            return
-
-        remainingLen = k - len(temp) # remainingLen = 2-1 = 1
-        # last start value that still allows filling 'remainingLen' numbers
-        end = n - remainingLen + 1 # 5 - 1 + 1 = 5
-
-        for i in range(start, end + 1):
-            temp.append(i)
-            self._backtracking(n, k, result, temp, i + 1)
-            temp.pop()
 
 if __name__ == "__main__":
     sol = Solution()

@@ -35,28 +35,26 @@ All elements of candidates are distinct.
 #Time complexity O(n^T/m . T/m)
 #Space complexity O(T/m)
 from typing import List
-
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        if not candidates or target < 0:
+        if not candidates:
             return []
+        candidates.sort()
+        result = []
+        n = len(candidates)
 
-        candidates.sort() #important to sort
-        result: List[List[int]] = []
-        self._backtrack(candidates, target, 0, [], result) # O(n^T/m) * T/m
+        def backtracking(current, sum, start):
+            if sum == target:
+                result.append(current.copy())
+                return
+
+            for i in range(start, n):
+                if sum + candidates[i] > target:
+                    break
+                current.append(candidates[i])
+                backtracking(
+                    current,sum + candidates[i], i
+                )
+                current.pop()
+        backtracking([], 0, 0)
         return result
-
-    def _backtrack(self, candidates: List[int], remain: int, start: int,
-                   path: List[int], result: List[List[int]]) -> None:
-        if remain == 0:
-            result.append(path.copy()) #O(T/m)
-            return
-
-        for i in range(start, len(candidates)):
-            val = candidates[i]
-            if val > remain:   # prune (sorted)
-                break
-
-            path.append(val)
-            self._backtrack(candidates, remain - val, i, path, result)  # reuse allowed
-            path.pop()
