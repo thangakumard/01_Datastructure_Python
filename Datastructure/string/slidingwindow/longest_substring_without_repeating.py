@@ -12,23 +12,6 @@ class Solution:
             max_length = max(max_length, right - left + 1)
 
         return max_length
-    
-    def lengthOfLongestSubstring_II(self, s: str) -> int:
-        counter = [0] * 256
-        left = right = 0
-        max_length = 0
-
-        while right < len(s):
-            if counter[ord(s[right])] == 0:
-                counter[ord(s[right])] += 1
-                right += 1
-            else:
-                counter[ord(s[left])] -= 1
-                left += 1
-
-            max_length = max(max_length, right - left)
-    
-        return max_length
 
 
 if __name__ == "__main__":
