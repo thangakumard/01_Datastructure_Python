@@ -24,9 +24,9 @@ s consists of lowercase and/or uppercase English letters only.
 '''
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        freq = defaultdict(int)
+        freq = {}
         for c in s:
-            freq[c] += 1
+            freq[c] = freq.get(c,0)+1
         
         has_Odd = False
         evenCount = 0
@@ -39,3 +39,4 @@ class Solution:
 
         
         return evenCount + 1 if has_Odd else evenCount
+
